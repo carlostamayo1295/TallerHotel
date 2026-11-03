@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: hotel
+  datasource:
+    # Autenticacion de Windows: usa la cuenta que ejecuta Java.
+    # Requiere la base hotel y la DLL mssql-jdbc_auth de la misma version del driver.
+    # La DLL debe estar disponible en java.library.path.
+    url: "${HOTEL_DB_URL:jdbc:sqlserver://localhost:1433;databaseName=hotel;integratedSecurity=true;encrypt=true;trustServerCertificate=true}"
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
